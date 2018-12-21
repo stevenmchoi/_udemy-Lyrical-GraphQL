@@ -11,10 +11,7 @@ class SongList extends Component {
 		return songs.map(({ id, title }) => (
 			<li key={`${id}`} className="collection-item">
 				{title}
-				<i
-					onClick={() => this.onSongDelete(id)}
-					className="material-icons right"
-				>
+				<i onClick={() => this.onSongDelete(id)} className="material-icons">
 					delete
 				</i>
 			</li>

@@ -19,7 +19,7 @@ class SongDetail extends Component {
 
 				<h3>{song.title}</h3>
 
-				<LyricList />
+				<LyricList lyrics={song.lyrics} />
 
 				<LyricCreate songId={song.id} />
 				{/* <LyricCreate songId={this.props.params.id} /> */}

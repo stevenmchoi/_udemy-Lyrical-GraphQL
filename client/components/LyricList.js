@@ -8,17 +8,18 @@ class LyricList extends Component {
 			return (
 				<li key={id} className="collection-item">
 					{content}
-					<i onClick={() => this.onLike(id)} className="material-icons">
-						thumb_up
-					</i>
-					{likes}
+					<div className="vote-box">
+						<i onClick={() => this.onLike(id)} className="material-icons">
+							thumb_up
+						</i>
+						{likes}
+					</div>
 				</li>
 			);
 		});
 	}
 
 	onLike(id) {
-		console.log(id);
 		this.props.mutate({
 			variables: { id },
 		});
@@ -33,12 +34,7 @@ const mutation = gql`
 	mutation LikeLyric($id: ID) {
 		likeLyric(id: $id) {
 			id
-			content
 			likes
-			song {
-				id
-				title
-			}
 		}
 	}
 `;
